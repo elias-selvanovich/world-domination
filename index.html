@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4X Strategy Game</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #app { display: flex; height: 100%; background: #111; }
+    #viewport-container { 
+      flex: 1; 
+      position: relative; 
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #viewport-container canvas { 
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+    #sidebar { width: 300px; background: #1a1f29; padding: 16px; color: #eee; box-sizing: border-box; }
+    #controls input { width: 60px; margin-right: 8px; }
+    #controls div { margin-top: 8px; font-size: 0.9em; color: #ccc; }
+    #info { margin-top: 24px; }
+    #info h3 { margin: 0 0 8px; font-size: 1.1em; }
+    #info p { margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="viewport-container">
+      <canvas id="map-canvas" width="1200" height="800"></canvas>
+    </div>
+    <div id="sidebar">
+      <div id="controls">
+        <div>
+          <input type="number" id="seedInput" placeholder="Seed">
+          <button id="regen">New Game</button>
+        </div>
+        <button id="endTurn">End Turn</button>
+      </div>
+      <div id="info"></div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
